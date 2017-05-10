@@ -1,0 +1,28 @@
+---
+title: "estantes_lilia"
+author: "Alexander Florez Rodriguez"
+date: "5/10/2017"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r}
+library(knitr)
+read_chunk("estantes_tante.R")
+```
+
+```{r}
+e <- estantes_df <- read.delim("estantes.txt", header = T, sep = "\t")
+t <- tes_df <- read.delim("tes.txt", header = T, sep = "\t")
+```
+
+```{r estantes, echo=F}
+estantes_lilia <- es.tante(e, t)
+```
+\usepackage{lscape}
+\blandscape
+```{r }
+kable(estantes_lilia[[1]])
+```
+\elandscape
